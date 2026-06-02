@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rahul Kumar is a Data Science student specializing in machine learning, NLP, and data visualization. Explore portfolio projects like TenderAI Analyzer and Trading Bot." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <title>Rahul Kumar | Data Science Portfolio</title>
+    <meta property="og:title" content="Rahul Kumar | Data Science Portfolio" />
+    <meta property="og:description" content="Explore Rahul Kumar’s data science portfolio featuring machine learning, NLP, and visualization projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Rahul Kumar | Data Science Portfolio" />
+    <meta name="twitter:description" content="Explore Rahul Kumar’s data science portfolio featuring machine learning, NLP, and visualization projects." />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Rahul Kumar",
+            "jobTitle": "Data Science Student",
+            "description": "Data Science student specializing in machine learning, natural language processing, and data visualization.",
+            "knowsAbout": ["Machine Learning", "NLP", "Data Visualization", "Python", "AI"],
+            "sameAs": ["https://github.com/rahul17-cloud"]
+        }
+    </script>
+    <style>
+        /* === CSS RESET & GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #252525;
+            --bg-card: #2d2d2d;
+            --text-primary: #e9e9e9;
+            --text-heading: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent: #4fc3f7;
+            --accent-hover: #f6d429;
+            --success: #66bb6a;
+            --warning: #ffb74d;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top right, rgba(79, 195, 247, 0.14), transparent 20%),
+                        radial-gradient(circle at bottom left, rgba(246, 212, 41, 0.08), transparent 18%),
+                        linear-gradient(180deg, #101010 0%, #1d1f2a 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        /* === TYPOGRAPHY === */
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, var(--accent), #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-md);
+            color: var(--text-muted);
+        }
+
+        /* === NAVIGATION === */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--text-heading);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* === BUTTONS === */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin: 0.5rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 195, 247, 0.3);
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-full {
+            width: 100%;
+            max-width: 260px;
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* === HERO SECTION === */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at top left, rgba(79, 195, 247, 0.12), transparent 22%),
+                        radial-gradient(circle at 85% 15%, rgba(246, 212, 41, 0.08), transparent 18%),
+                        linear-gradient(135deg, #101018 0%, #1f2230 45%, #1a1a1a 100%);
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.08), transparent 20%),
+                        radial-gradient(circle at 80% 30%, rgba(79, 195, 247, 0.14), transparent 16%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 110px 0 60px;
+            z-index: 1;
+        }
+
+        .hero-buttons {
+            margin-top: var(--spacing-md);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* === COVER PAGE === */
+        #coverpage {
+            min-height: auto;
+            padding: var(--spacing-lg) 0;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border-top: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .cover-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+            max-width: 1000px;
+            padding: var(--spacing-lg);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: calc(var(--border-radius) * 1.2);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .cover-text h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .cover-text p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .cover-highlights {
+            margin: var(--spacing-md) 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-item i {
+            color: var(--accent);
+            margin-top: 0.3rem;
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        .highlight-item span {
+            color: var(--text-primary);
+        }
+
+        .cover-buttons {
+            margin-top: var(--spacing-md);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cover-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(79, 195, 247, 0.12);
+        }
+
+        .stat-box {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* === SKILLS PREVIEW === */
+        #skills-preview {
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-pill {
+            background-color: var(--bg-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        .skill-pill:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* === PROJECTS SECTION === */
+        #projects {
+            background-color: var(--bg-primary);
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 1px solid #444;
+            color: var(--text-primary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .project-card {
+            background: linear-gradient(180deg, #181b26 0%, #212637 100%);
+            border-radius: calc(var(--border-radius) * 1.1);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(79, 195, 247, 0.14);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.30);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            width: 100%;
+            min-height: 220px;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.9) 0%, rgba(58, 123, 213, 0.95) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.14), transparent 18%),
+                        radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.08), transparent 14%);
+            pointer-events: none;
+        }
+
+        .project-content {
+            padding: calc(var(--spacing-md) * 0.9);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin: var(--spacing-sm) 0;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            background: rgba(79, 195, 247, 0.12);
+            color: var(--accent);
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            letter-spacing: 0.02em;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* === ABOUT SECTION === */
+        #about {
+            background-color: var(--bg-secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .about-text h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .about-details {
+            margin: var(--spacing-md) 0;
+        }
+
+        .detail-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-item i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        .skills-chart {
+            margin-top: var(--spacing-md);
+        }
+
+        .skill-bar {
+            margin-bottom: 1rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-percentage {
+            color: var(--accent);
+        }
+
+        .skill-progress {
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* === CONTACT SECTION === */
+        #contact {
+            background-color: var(--bg-primary);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .contact-method {
+            background: var(--bg-card);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.04);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(79, 195, 247, 0.12);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-heading);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--bg-secondary);
+            border: 1px solid #444;
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: var(--spacing-md) 0;
+            border-top: 1px solid #333;
+            margin-top: var(--spacing-lg);
+            background: var(--bg-secondary);
+        }
+
+        .social-links {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .cover-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .cover-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .cover-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cover-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* === UTILITY CLASSES === */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-1 { margin-top: 1rem; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">RJ<span>Portfolio</span></div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#coverpage">Cover</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Rahul Kumar</h1>
+            <p class="tagline">Data Science Student | Transforming Data into Actionable Insights</p>
+            <p>I'm a passionate third-year Data Science student specializing in Machine Learning, Natural Language Processing, and Data Visualization. I turn complex datasets into clear, impactful stories that drive decision-making.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">
+                    <i class="fas fa-rocket"></i> View My Projects
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cover Page Section -->
+    <section id="coverpage">
+        <div class="container">
+            <div class="cover-content">
+                <div class="cover-text">
+                    <h3>Professional Profile</h3>
+                    <p>Hello! I'm Rahul Kumar, a dedicated Data Science professional with a passion for solving real-world problems through data-driven solutions.</p>
+                    
+                    <div class="cover-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Expertise:</strong> Machine Learning, NLP, Data Analysis & Visualization</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Focus:</strong> Transforming complex datasets into actionable insights</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Approach:</strong> Combining technical excellence with business acumen</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Goal:</strong> Creating impactful solutions that drive meaningful change</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cover-buttons">
+                        <a href="#projects" class="btn">
+                            <i class="fas fa-briefcase"></i> Explore My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Let's Connect
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cover-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Tech Stack Skills</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Passion & Dedication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Preview Section -->
+    <section id="skills-preview">
+        <div class="container">
+            <h2>Technical Toolkit</h2>
+            <p class="section-description">Technologies and tools I use to transform raw data into meaningful insights</p>
+            <div class="skills-container">
+                <div class="skill-pill">Python</div>
+                <div class="skill-pill">Machine Learning</div>
+                <div class="skill-pill">Natural Language Processing</div>
+                <div class="skill-pill">Data Visualization</div>
+                <div class="skill-pill">R Programming</div>
+                <div class="skill-pill">Power BI</div>
+                <div class="skill-pill">SQL</div>
+                <div class="skill-pill">HTML/CSS</div>
+                <div class="skill-pill">Java</div>
+                <div class="skill-pill">Scikit-learn</div>
+                <div class="skill-pill">TensorFlow</div>
+                <div class="skill-pill">Pandas & NumPy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Quick Download -->
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <p class="section-description">Quick access to my resume — open in a new tab or download.</p>
+
+            <div class="mb-2 text-center">
+                <a href="C:\Users\rahul\Downloads\rahul_resume (1).pdf"class="btn" target="_blank" rel="noopener">Open in New Tab</a>
+                <a href="C:\Users\rahul\Downloads\rahul_resume (1).pdf" class="btn btn-outline" download target="_blank" rel="noopener">Download Resume</a>
+            </div>
+
+            <div class="resume-projects text-center">
+                <p style="color:var(--text-muted);">Latest GitHub projects now included in my resume:</p>
+                <p><a href="https://github.com/rahul17-cloud/TenderAI-Analyzer" target="_blank" rel="noopener">TenderAI Analyzer</a> · <a href="https://github.com/rahul17-cloud/TRADING_BOT" target="_blank" rel="noopener">Trading Bot</a></p>
+            </div>
+
+            <p class="text-center" style="color:var(--text-muted);">Ready to grab opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-description">A showcase of my work in machine learning, NLP, and data visualization</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="nlp">NLP</button>
+                <button class="filter-btn" data-filter="viz">Visualization</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Titanic Survival Dataset Analysis</h3>
+                        <p>Exploratory data analysis and machine learning predictions on the Titanic dataset. Building models to predict passenger survival rates using various features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/working-with-titanic-survival-dataset" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Movie Classification</h3>
+                        <p>Machine learning model for classifying movies based on various features. Includes data preprocessing, feature engineering, and model evaluation techniques.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Jupyter Notebook</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/movie-classification" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-flower"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Flower Classification Minor Project</h3>
+                        <p>Image classification project for categorizing different flower species. Uses deep learning and computer vision techniques for accurate flower identification.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/flower-classification-minor-project" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Credit Card Fraud Detection</h3>
+                        <p>Machine learning project for detecting fraudulent credit card transactions. Implements various classifiers and techniques to identify suspicious patterns in financial data.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Science</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/credit-card-fraud-detection-minor-project" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="viz">
+                    <div class="project-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Car Sales Visualization Minor Project</h3>
+                        <p>Data visualization project exploring car sales data. Demonstrates key visualization techniques and best practices for presenting data insights effectively.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Matplotlib/Seaborn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/car-sales-visualization-minor-project" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Smart Traffic Management System</h3>
+                        <p>AI-powered traffic management system that optimizes traffic flow, reduces congestion, and improves urban mobility using real-time data processing.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">AI/ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/smart-traffic-management-system" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Smart Pricing</h3>
+                        <p>Dynamic pricing system that uses machine learning algorithms to optimize product pricing based on market demand and competition analysis.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/smart-pricing" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Daily Use Product Analysis</h3>
+                        <p>Data analysis and insights project for daily use products including market trends, consumer behavior analysis, and recommendation systems.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/daily-use-product" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Customer Churn Prediction</h3>
+                        <p>Machine learning model to predict customer churn patterns and identify at-risk customers for retention strategies.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/customer_churn_prediction" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Student Network Platform</h3>
+                        <p>Web-based platform for students to connect, collaborate, and share academic resources with integrated messaging and project management features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rahul17-cloud/student_network_platform" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Project 11 -->
+                    <div class="project-card" data-category="nlp">
+                        <div class="project-image">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>TenderAI Analyzer</h3>
+                            <p>AI-driven tender intelligence solution that analyzes procurement opportunities and helps identify key insights from tender data.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Data Analysis</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/rahul17-cloud/TenderAI-Analyzer" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 12 -->
+                    <div class="project-card" data-category="nlp">
+                        <div class="project-image">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Trading Bot</h3>
+                            <p>Automated trading bot that uses algorithmic strategies to execute orders and respond to market signals in real time.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Algorithmic Trading</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/rahul17-cloud/TRADING_BOT" class="btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-description">Get to know my journey, skills, and passion for data science</p>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="about-text">
+                    <h3>Data Science Student & Aspiring ML Engineer</h3>
+                    <p>I'm a passionate third-year Data Science student with hands-on experience through two internships in machine learning and data analysis. I'm constantly exploring new technologies and methodologies to extract meaningful insights from data.</p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span><strong>Education:</strong> B.Tech in Data Science (Third Year)</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span><strong>Experience:</strong> 2 Internships in Data Analysis & ML</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> India</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong> rahulk162004@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-chart">
+                        <h4>Technical Proficiency</h4>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Python & Data Science Libraries</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Machine Learning</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Natural Language Processing</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Data Visualization</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-description">Ready to collaborate or have questions? I'd love to hear from you!</p>
+            
+            <div class="contact-content">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>rahulk162004@gmail.com</p>
+                        <a href="mailto:rahulk162004@gmail.com" class="btn btn-sm mt-1">Send Email</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <h4>LinkedIn</h4>
+                        <p>Connect professionally</p>
+                        <a href="https://www.linkedin.com/in/rahul-kumar-53543a300/" class="btn btn-sm mt-1" target="_blank">Visit Profile</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                        <p>Explore my code</p>
+                        <a href="https://github.com/rahul17-cloud" class="btn btn-sm mt-1" target="_blank">View Repos</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="text-center">Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rahul-kumar-53543a300/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/rahul17-cloud" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="mailto:rahulk162004@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Rahul Kumar. Built with passion and pure code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                nav.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Project filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const projects = document.querySelectorAll('.project-card');
+                
+                projects.forEach(project => {
+                    if (filter === 'all' || project.getAttribute('data-category').includes(filter)) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animate skill bars when they come into view
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress-fill');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.querySelector('#about'));
+
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Add loading animation for project cards
+        window.addEventListener('load', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
