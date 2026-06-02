@@ -3,7 +3,7 @@
 Welcome to my professional data science portfolio! This website showcases my projects, skills, and expertise in Machine Learning, Natural Language Processing, and Data Visualization.
 
 ## 🌐 Live Website
-Visit my portfolio: [https://rahul17-cloud.github.io/portfolio](https://rahul17-cloud.github.io/portfolio)
+Visit my portfolio: [https://rahul17-cloud.github.io/portfolio](https://portfoliowebsite-two-rouge.vercel.app/)
 
 ## 👨‍💻 About Me
 I'm a passionate **Data Science Student** specializing in:
